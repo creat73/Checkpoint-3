@@ -9,6 +9,17 @@ public class BookModel{
     private String price;
     private String type;
 
+    public BookModel(String ISBN, String authorName, String title, String publisherName, String publicationYear
+    ,String price, String type){
+        this.ISBN = ISBN;
+        this.authorName = authorName;
+        this.title = title;
+        this.publisherName = publisherName;
+        this.publicationYear = publicationYear;
+        this.price = price;
+        this.type = type;
+    }
+
     public String getISBN() {
         return ISBN;
     }
