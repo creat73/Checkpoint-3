@@ -62,7 +62,7 @@ public class BookController{
 
     private String getISBNFromUser(){
         BookView view = new BookView();
-        String ISBN;
+        String ISBN = "";
         boolean isISBNCorrect = false;
         Integer validISBNLength = 13;
 
@@ -73,6 +73,8 @@ public class BookController{
                 isISBNCorrect = true;
             }
         }
+
+        return ISBN;
     }
 
 
