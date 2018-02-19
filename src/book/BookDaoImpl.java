@@ -15,7 +15,7 @@ public class BookDaoImpl implements BookDao{
 
     @Override
     public void deleteBook(BookModel book) throws java.sql.SQLException{
-        String bookName = book.getName();
+        String bookName = book.getTitle();
 
         Connection con = connectToDatabase();
         Objects.requireNonNull(con).setAutoCommit(false);
