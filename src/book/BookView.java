@@ -19,4 +19,14 @@ public class BookView extends AbstractConsoleView{
     public String publicationYearQuestionText = "Type in publication year: ";
     public String priceQuestionText = "Type in price of the book: ";
     public String typeQuestionText = "Type in type of the book: ";
+
+    public String bookEditQuestion = "Which value would you like to edit:\n" +
+            "1. ISBN\n" +
+            "2. author\n" +
+            "3. title\n" +
+            "4. publisher\n"+
+            "5. publication year\n"+
+            "6. price\n"+
+            "7. type\n";
+    public String whichBook = "Which book would you like to edit?";
 }
