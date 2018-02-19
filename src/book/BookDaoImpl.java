@@ -30,5 +30,30 @@ public class BookDaoImpl implements BookDao{
         con.close();
     }
 
-    
+    public void addBook(BookModel book) throws java.sql.SQLException{
+        String ISBN = book.getISBN();
+        String authorName = book.getAuthorName();
+        String title = book.getTitle();
+        String publisherName = book.getPublisherName();
+        String publicationYear = book.getPublicationYear();
+        String price = book.getPrice();
+        String type = book.getType();
+
+        Connection con = connectToDatabase();
+        Objects.requireNonNull(con).setAutoCommit(false);
+        Statement stmt = con.createStatement();
+
+        String sql = ("INSERT INTO Books (ISBN, author, title, publisher, publication_year, price, type)" +
+                "VALUES('"+ ISBN + "', '" + authorName + "', '" + title +
+                "', '" + publisherName + "', '" + publicationYear +
+                "', '" + price + "', '" + type + "');");
+        stmt.executeUpdate(sql);
+
+        con.commit();
+
+        stmt.close();
+        con.close();
+    }
+
+   
 }
