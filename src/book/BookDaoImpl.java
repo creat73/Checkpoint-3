@@ -13,5 +13,22 @@ public class BookDaoImpl implements BookDao{
         return DriverManager.getConnection(dbPath);
     }
 
+    @Override
+    public void deleteBook(BookModel book) throws java.sql.SQLException{
+        String bookName = book.getName();
+
+        Connection con = connectToDatabase();
+        Objects.requireNonNull(con).setAutoCommit(false);
+        Statement stmt = con.createStatement();
+
+        String sql = "DELETE from artifact_store WHERE name='" + bookName + "';";
+
+        stmt.executeUpdate(sql);
+        con.commit();
+
+        stmt.close();
+        con.close();
+    }
+
     
 }
